@@ -55,5 +55,5 @@ module "virtual_machines" {
   local_exec_user          = var.local_exec_user
   local_exec_ssh_key_file  = var.local_exec_ssh_key_file
   path_to_ansible          = var.path_to_ansible
-  ansible_args             = format(--extra-vars '%#v' -e 'hostname=${var.name_prefix}-${count.index}' -e 'nomad_node_name=${var.name_prefix}-${count.index}' -vvv -b", local.ansible_extra_vars)
+  ansible_args             = format("--extra-vars '%#v' -e 'hostname=${var.name_prefix}-${count.index}' -e 'nomad_node_name=${var.name_prefix}-${count.index}' -vvv -b", local.ansible_extra_vars)
 }
