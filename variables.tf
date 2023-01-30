@@ -3,6 +3,13 @@ variable "num_instances" {
   default     = "1"
   type        = string
 }
+
+variable "vm_firmware" {
+  description = "The firmware for the virtual machine. One of bios or efi."
+  default     = "efi"
+  type        = string
+}
+
 variable "name_prefix" {
   description = "Prefix for naming convention of VMs"
   default     = "vm"
