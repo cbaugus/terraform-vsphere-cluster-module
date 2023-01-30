@@ -15,7 +15,7 @@ locals {
 
 module "virtual_machines" {
   source  = "app.terraform.io/baugus-lab/vm-module/vsphere"
-  version = "v1.0.1"
+  version = "v1.0.4"
   count   = tonumber(var.num_instances)
   network = {
     (data.vsphere_network.network.name) = var.ip_address
