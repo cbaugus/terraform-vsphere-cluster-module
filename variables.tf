@@ -199,6 +199,17 @@ variable "path_to_ansible" {
   type        = string
   default     = "../../ansible-deployments/main.yml"
 }
+variable "ansible_node_args" {
+  description = "ansible_node_args "
+  type        = string
+  default     = "dnsmasq=true consul_mode=client nomad_mode=client vault_mode=client"
+}
+variable "noamd_purpose" {
+  description = "ansible_node_args "
+  type        = string
+  default     = "purpose=heater"
+}
+
 ##TODO: Determine if this is needed
 variable "provisioner_hostname_flag" {
   description = "Flag to indicate if the two variables hostname and nomad_node_name should be supplied to the local-exec provisioner with the VM name"
