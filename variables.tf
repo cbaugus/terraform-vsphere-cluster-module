@@ -1067,6 +1067,12 @@ variable "nomad_env_namespace" {
   type        = string
   default     = ""
 }
+nomad_purpose
+variable "nomad_purpose" {
+  description = "nomad node purpose"
+  type        = string
+  default     = "heater"
+}
 variable "nomad_acl_replication_token" {
   description = "Token to use for acl replication on non authoritive servers"
   type        = string
