@@ -1067,7 +1067,7 @@ variable "nomad_env_namespace" {
   type        = string
   default     = ""
 }
-nomad_purpose
+
 variable "nomad_purpose" {
   description = "nomad node purpose"
   type        = string
