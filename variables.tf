@@ -1062,6 +1062,11 @@ variable "nomad_acl_policy_ttl" {
   default     = "30s"
 }
 ##TODO: Source from Vault
+variable "nomad_env_namespace" {
+  description = "nomad namespace used by Nomad Prod - Nonprod"
+  type        = string
+  default     = ""
+}
 variable "nomad_acl_replication_token" {
   description = "Token to use for acl replication on non authoritive servers"
   type        = string
