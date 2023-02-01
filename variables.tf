@@ -175,7 +175,7 @@ variable "remote_exec_user" {
 variable "remote_exec_ssh_key_file" {
   description = "Path to the SSH key to connect to created VMs, located on the Terraform runner"
   type        = string
-  default     = "/opt/devops-local/ssl/keys/key.pem"
+  default     = "/opt/devops-local/ssh/cicduser"
 }
 variable "remote_exec_timeout" {
   description = "Timeout value for remote exec provisioner to connect to VM"
@@ -190,7 +190,7 @@ variable "local_exec_user" {
 variable "local_exec_ssh_key_file" {
   description = "Path to the SSH key to connect to created VMs, located on the Terraform runner"
   type        = string
-  default     = "/opt/devops-local/ssl/keys/key.pem"
+  default     = "/opt/devops-local/ssh/cicduser"
 }
 variable "path_to_ansible" {
   description = "Location of Ansible playbook on Terraform runner"
