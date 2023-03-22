@@ -347,25 +347,11 @@ locals {
     "nfs_mount_options" = var.nfs_mount_options
     "nfs_mount_path" = var.nfs_mount_path
 
+    "nomad_host_volume" = var.nomad_host_volumes
+
     "growr_env" = merge([for index, disk in var.growr_provisioned_disks : merge({
       // Regular Vars
       "LABEL_${disk.DEVICE_DRIVE}" = disk["LABEL"],
-    })]...)
-    "s3_env" = merge([for index, disk in var.s3_provisioned_disks : merge({
-      // Regular Vars
-      "S3_HOST_${index + 1}"                 = disk["S3_HOST_${index + 1}"],
-      "S3_MOUNT_${index + 1}"                = disk["S3_MOUNT_${index + 1}"],
-      "S3_UID_${index + 1}"                  = disk["S3_UID_${index + 1}"],
-      "S3_GID_${index + 1}"                  = disk["S3_GID_${index + 1}"],
-      "S3_ACL_${index + 1}"                  = disk["S3_ACL_${index + 1}"],
-      "S3_CACHE_${index + 1}"                = disk["S3_CACHE_${index + 1}"]
-      "S3_BUCKET_${index + 1}"               = disk["S3_BUCKET_${index + 1}"],
-      "S3_NO_CHECK_CERTIFICATE_${index + 1}" = disk["S3_NO_CHECK_CERTIFICATE_${index + 1}"],
-      "S3_SSL_VERIFY_HOSTNAME_${index + 1}"  = disk["S3_SSL_VERIFY_HOSTNAME_${index + 1}"],
-      "S3_EXTRA_OPTS_${index + 1}"           = disk["S3_EXTRA_OPTS_${index + 1}"]
-      // Secret Vars
-      "S3_ACCESS_KEY_${index + 1}" = disk["S3_ACCESS_KEY_${index + 1}"],
-      "S3_SECRET_KEY_${index + 1}" = disk["S3_SECRET_KEY_${index + 1}"]
     })]...)
   }
 }
@@ -413,5 +399,5 @@ module "virtual_machines" {
   local_exec_user          = var.local_exec_user
   local_exec_ssh_key_file  = var.local_exec_ssh_key_file
   path_to_ansible          = var.path_to_ansible
-  ansible_args             = format("--extra-vars '%#v' -e 'hostname=${var.name_prefix}-${count.index}' -e 'nomad_node_name=${var.name_prefix}-${count.index}' -e 'purpose=${var.nomad_purpose}' -e 'consul_acl_token=${var.consul_acl_token}' -e 'nomad_node_class=${var.nomad_node_class}' -e nomad_client_token='${var.nomad_consul_token}' -vvv -b", local.ansible_extra_vars)
+  ansible_args             = format("--extra-vars '%#v' -e 'hostname=${var.name_prefix}-${count.index}' -e 'nomad_node_name=${var.name_prefix}-${count.index}' -e 'purpose=${var.nomad_purpose}' -e 'consul_acl_token=${var.consul_acl_token}' -e 'nomad_node_class=${var.nomad_node_class}' -e nomad_client_token='${var.nomad_consul_token}' -e nomad_host_volumes='${var.nomad_host_volumes}' -vvv -b", local.ansible_extra_vars)
 }

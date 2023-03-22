@@ -151,12 +151,6 @@ variable "provisioned_disks" {
   type        = any
   default     = {}
 }
-##TODO: Determine default S3 provisioned disks
-variable "s3_provisioned_disks" {
-  description = "Storage data disk parameter, holding paramaters for provisioning with s3_handlr ansible role"
-  type        = any
-  default     = {}
-}
 variable "growr_provisioned_disks" {
   description = "Storage data disk parameter, holding paramaters for provisioning with growr ansible role"
   type        = any
@@ -1856,84 +1850,6 @@ variable "vault_consul_role_cluster_type" {
 }
 
 ########## SECRETS ##########
-variable "tmi_devtest_minio_s3_streaming_access_key" {
-  description = "Troy Non-Prod S3 Streaming Access Key"
-  type        = string
-  default     = ""
-}
-
-variable "tmi_devtest_minio_s3_streaming_secret_key" {
-  description = "Troy Non-Prod S3 Streaming Secret Key"
-  type        = string
-  default     = ""
-}
-
-variable "tmi_prod_minio_s3_streaming_access_key" {
-  description = "Troy Prod S3 Streaming Access Key"
-  type        = string
-  default     = ""
-}
-
-variable "tmi_prod_minio_s3_streaming_secret_key" {
-  description = "Troy Prod S3 Streaming Secret Key"
-  type        = string
-  default     = ""
-}
-
-variable "dal_devtest_minio_s3_streaming_access_key" {
-  description = "Dallas Non-Prod S3 Streaming Access Key"
-  type        = string
-  default     = ""
-}
-
-variable "dal_devtest_minio_s3_streaming_secret_key" {
-  description = "Dallas Non-Prod S3 Streaming Secret Key"
-  type        = string
-  default     = ""
-}
-
-variable "dal_prod_minio_s3_streaming_access_key" {
-  description = "Dallas Prod S3 Streaming Access Key"
-  type        = string
-  default     = ""
-}
-
-variable "dal_prod_minio_s3_streaming_secret_key" {
-  description = "Dallas Prod S3 Streaming Secret Key"
-  type        = string
-  default     = ""
-}
-variable "minio_s3_web_access_key" {
-  description = "S3 Web Access Key"
-  type        = string
-  default     = ""
-}
-
-variable "minio_s3_web_secret_key" {
-  description = "S3 Web Secret Key"
-  type        = string
-  default     = ""
-}
-variable "minio_s3_minio_access_key" {
-  description = "S3 Minio Testing Access Key"
-  type        = string
-  default     = ""
-}
-variable "minio_s3_minio_secret_key" {
-  description = "S3 Minio Testing Secret Key"
-  type        = string
-  default     = ""
-}
-variable "minio_s3_data_access_key" {
-  description = "S3 Minio Testing Access Key"
-  type        = string
-  default     = ""
-}
-variable "minio_s3_data_secret_key" {
-  description = "S3 Minio Testing Secret Key"
-  type        = string
-  default     = ""
-}
 
 variable "known_hosts_targets" {
   description = "Known Hosts Targets"
