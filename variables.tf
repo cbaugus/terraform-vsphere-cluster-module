@@ -1035,7 +1035,7 @@ variable "nomad_consul_clients_service_name" {
   type        = string
   default     = "nomad-client"
 }
-variable "nomad_consul_token" {
+variable "nomad_node_token" {
   description = "Token to use for consul interaction"
   type        = string
   default     = ""

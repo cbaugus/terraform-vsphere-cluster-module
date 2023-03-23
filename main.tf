@@ -178,7 +178,7 @@ locals {
     "nomad_consul_address"                       = var.nomad_consul_address
     "nomad_consul_servers_service_name"          = var.nomad_consul_servers_service_name
     "nomad_consul_clients_service_name"          = var.nomad_consul_clients_service_name
-    "nomad_consul_token"                         = var.nomad_consul_token
+    "nomad_node_token"                           = var.nomad_node_token
     "nomad_acl_enabled"                          = var.nomad_acl_enabled
     "nomad_acl_token_ttl"                        = var.nomad_acl_token_ttl
     "nomad_acl_policy_ttl"                       = var.nomad_acl_policy_ttl
@@ -399,5 +399,5 @@ module "virtual_machines" {
   local_exec_user          = var.local_exec_user
   local_exec_ssh_key_file  = var.local_exec_ssh_key_file
   path_to_ansible          = var.path_to_ansible
-  ansible_args             = format("--extra-vars '%#v' -e 'hostname=${var.name_prefix}-${count.index}' -e 'nomad_node_name=${var.name_prefix}-${count.index}' -e 'purpose=${var.nomad_purpose}' -e 'consul_acl_token=${var.consul_acl_token}' -e 'nomad_node_class=${var.nomad_node_class}' -e nomad_client_token='${var.nomad_consul_token}' -e nomad_host_volumes='${var.nomad_host_volumes}' -vvv -b", local.ansible_extra_vars)
+  ansible_args             = format("--extra-vars '%#v' -e 'hostname=${var.name_prefix}-${count.index}' -e 'nomad_node_name=${var.name_prefix}-${count.index}' -e 'purpose=${var.nomad_purpose}' -e 'consul_acl_token=${var.consul_acl_token}' -e 'nomad_node_class=${var.nomad_node_class}' -e nomad_client_token='${var.nomad_node_token}' -vvv -b", local.ansible_extra_vars)
 }
