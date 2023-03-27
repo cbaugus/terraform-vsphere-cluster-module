@@ -101,43 +101,43 @@ variable "vsphere_pass" {
 variable "vsphere_server" {
   description = "vSphere server address"
   type        = string
-  default     = "10.254.101.20"
+  default     = ""
   sensitive   = true
 }
 variable "vsphere_datacenter" {
   description = "vSphere datacenter"
-  default     = "tmi-w01-dc01"
+  default     = ""
   type        = string
 }
 variable "vsphere_compute_cluster" {
   description = "vSphere compute cluster"
-  default     = "tmi-w01-cl01-dev"
+  default     = ""
   type        = string
 }
 variable "vsphere_resource_pool" {
   description = "vSphere resource pool"
-  default     = "tmi-w01-dc01/tmi-w01-cl01/Resources"
+  default     = ""
   type        = string
 }
 variable "vsphere_datastore" {
   description = "vSphere datastore"
-  default     = "troy-nonprod-ds-vsan"
+  default     = ""
   type        = string
 }
 variable "vsphere_network" {
   description = "vSphere network"
-  default     = "tmi-w01-cl01-vds01-pg-ops-203"
+  default     = ""
   type        = string
 }
 ##TODO: Determine default folder
 variable "vsphere_folder" {
   description = "vSphere folder"
   type        = string
-  default     = "feature"
+  default     = ""
 }
 variable "vsphere_template" {
   description = "vSphere template for creating VM"
-  default     = "linux-ubuntu-server-20-04-lts-tmi-w01-cl01-dev"
+  default     = ""
   type        = string
 }
 variable "vsphere_tag_ids" {
