@@ -571,10 +571,10 @@ variable "consul_acl_token_persistence" {
   type        = string
   default     = "True"
 }
-variable "consul_acl_datacenter" {
+variable "consul_datacenter" {
   description = "ACL authoritative datacenter name"
   type        = string
-  default     = "tmi-w01-dc01" #Troy is default
+  default     = ""
 }
 variable "consul_acl_down_policy" {
   description = "Default ACL down policy"
