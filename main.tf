@@ -85,7 +85,7 @@ locals {
     "consul_acl_token"                       = var.consul_acl_token
     "consul_acl_default_policy"              = var.consul_acl_default_policy
     "consul_acl_token_persistence"           = var.consul_acl_token_persistence
-    "consul_acl_datacenter"                  = var.consul_acl_datacenter
+    "consul_datacenter"                      = var.consul_datacenter
     "consul_acl_down_policy"                 = var.consul_acl_down_policy
     "consul_acl_agent_token"                 = var.consul_acl_agent_token
     "consul_acl_agent_master_token"          = var.consul_acl_agent_master_token
