@@ -73,6 +73,10 @@ variable "disk_size" {
     large  = 120
     xl     = 240
     xxl    = 480
+    3xl    = 1024
+    4xl    = 2048
+    5xl    = 4096
+
   }
 }
 variable "ip_address" {
