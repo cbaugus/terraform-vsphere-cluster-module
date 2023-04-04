@@ -73,9 +73,9 @@ variable "disk_size" {
     large  = 120
     xl     = 240
     xxl    = 480
-    3xl    = 1024
-    4xl    = 2048
-    5xl    = 4096
+    xxxl   = 1024
+    xxxx   = 2048
+    xxxxxl = 4096
 
   }
 }
