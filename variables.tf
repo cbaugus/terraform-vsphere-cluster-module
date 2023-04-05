@@ -59,7 +59,7 @@ variable "disk_size_type" {
   default     = "small"
   type        = string
   validation {
-    condition     = var.disk_size_type == "nano" || var.disk_size_type == "micro" || var.disk_size_type == "small" || var.disk_size_type == "medium" || var.disk_size_type == "large" || var.disk_size_type == "xl" || var.disk_size_type == "xxl" || var.disk_size_type == "3xl" || var.disk_size_type == "4xl" || var.disk_size_type == "5xl"
+    condition     = var.disk_size_type == "nano" || var.disk_size_type == "micro" || var.disk_size_type == "small" || var.disk_size_type == "medium" || var.disk_size_type == "large" || var.disk_size_type == "xl" || var.disk_size_type == "xxl" || var.disk_size_type == "xxxl" || var.disk_size_type == "xxxxl" || var.disk_size_type == "xxxxxl"
     error_message = "Disk size type must be nano, micro, small, medium, large, xl or xxl."
   }
 }
@@ -73,9 +73,9 @@ variable "disk_size" {
     large  = 120
     xl     = 240
     xxl    = 480
-    3xl    = 1024
-    4xl    = 2048
-    5xl    = 4096
+    xxxl   = 1024
+    xxxxl  = 2048
+    xxxxxl = 4096
 
   }
 }
