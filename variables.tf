@@ -708,7 +708,7 @@ variable "docker_daemon_options" {
   description = ""
   type        = any
   default = {
-    "dns"          = ["10.254.203.31", "10.254.203.32", "10.254.203.33"]
+    "dns"          = ["172.17.0.1"]
     "metrics-addr" = "0.0.0.0:9323"
     "experimental" = true
   }
