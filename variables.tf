@@ -1044,6 +1044,11 @@ variable "nomad_consul_token" {
   type        = string
   default     = ""
 }
+variable "nomad_vault_token" {
+  description = "Token to use for vault interaction"
+  type        = string
+  default     = ""
+}
 variable "nomad_acl_enabled" {
   description = "Enable ACLs"
   type        = string
