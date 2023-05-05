@@ -966,6 +966,12 @@ variable "nomad_reserved_ports" {
   type        = number
   default     = 22
 }
+
+variable "nomad_host_folder" {
+  description = "create folder for nomad host volume"
+  type        = any
+  default     = {}
+}
 variable "nomad_host_volumes" {
   description = "Storage data disk parameter, example"
   type        = any
@@ -1884,6 +1890,12 @@ variable "vault_docker_secrets" {
 }
 
 #nfs server
+variable "nfs_configure" {
+  description = "NFS enable "
+  type        = any
+  default     = {}
+}
+
 variable "nfs_mount_server" {
   description = "NFS server ipaddress"
   type        = any

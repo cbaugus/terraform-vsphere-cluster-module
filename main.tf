@@ -95,25 +95,14 @@ locals {
     "consul_addresses_http"                  = var.consul_addresses_http
     "consul_ports"                           = var.consul_ports
     "consul_dnsmasq_enable"                  = var.consul_dnsmasq_enable
-    #"consul_delegate_datacenter_dns"         = ""
-    #"consul_dnsmasq_bind_interfaces"         = ""
-    #"consul_dnsmasq_consul_address"          = ""
-    #"consul_dnsmasq_cache"                   = ""
     "consul_dnsmasq_servers"    = var.consul_dnsmasq_servers
     "consul_dnsmasq_revservers" = var.consul_dnsmasq_revservers
-    #"consul_dnsmasq_no_poll"                 = ""
-    #"consul_dnsmasq_no_resolv"               = ""
-    #"consul_dnsmasq_local_service"           = ""
-    #"consul_dnsmasq_listen_addresses"        = ""
     "consul_iptables_enable" = var.consul_iptables_enable
     "consul_recursors"       = var.consul_recursors
     "consul_debug"           = var.consul_debug
     "consul_config_custom"   = var.consul_config_custom
 
     "docker_daemon_options" = var.docker_daemon_options
-    "docker_vault_login"    = var.docker_vault_login
-
-    "vault_docker_secrets" = var.vault_docker_secrets
 
     "nomad_debug"                                = var.nomad_debug
     "nomad_skip_ensure_all_hosts"                = var.nomad_skip_ensure_all_hosts
@@ -344,11 +333,13 @@ locals {
     "known_hosts_user"    = var.known_hosts_user
     "known_hosts_targets" = var.known_hosts_targets
 
-    "nfs_mount_server" = var.nfs_mount_server
+    "nfs_configure"     = var.nfs_configure
+    "nfs_mount_server"  = var.nfs_mount_server
     "nfs_mount_options" = var.nfs_mount_options
-    "nfs_mount_path" = var.nfs_mount_path
+    "nfs_mount_path"    = var.nfs_mount_path
 
     "nomad_host_volume" = var.nomad_host_volumes
+    "nomad_host_folder" = var.nomad_host_folder
 
     "growr_env" = merge([for index, disk in var.growr_provisioned_disks : merge({
       // Regular Vars
